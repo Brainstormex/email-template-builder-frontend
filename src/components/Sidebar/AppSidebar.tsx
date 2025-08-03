@@ -11,6 +11,7 @@ import {
     SidebarMenuItem,
   } from "@/components/ui/sidebar"
 import { HomeIcon } from "lucide-react"
+import Link from "next/link"
 
   const sidebarItems = [
     {
@@ -44,10 +45,10 @@ import { HomeIcon } from "lucide-react"
               {sidebarItems.map((item) => (
                 <SidebarMenuItem key={item.label}>
                   <SidebarMenuButton asChild>
-                    <a href={item.href}>
+                    <Link href={item.href}>
                       {item.icon}
                       <span>{item.label}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
