@@ -9,25 +9,50 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { HomeIcon, LayoutDashboard, MailIcon } from "lucide-react";
+import { ArrowLeft, Palette, Settings, Save, Eye, Download, Layers, Type } from "lucide-react";
 import Link from "next/link";
 import { NavUser } from "../ui/nav-user";
 
-const sidebarItems = [
+const templateCreateItems = [
   {
-    label: "Dashboard",
-    icon: <LayoutDashboard />,
+    label: "Back to Dashboard",
+    icon: <ArrowLeft />,
     href: "/",
   },
   {
-    label: "Email Templates",
-    icon: <MailIcon />,
-    href: "/templates",
+    label: "Design",
+    icon: <Palette />,
+    href: "#",
   },
   {
-    label: "Home",
-    icon: <HomeIcon />,
-    href: "/",
+    label: "Elements",
+    icon: <Layers />,
+    href: "#",
+  },
+  {
+    label: "Typography",
+    icon: <Type />,
+    href: "#",
+  },
+  {
+    label: "Preview",
+    icon: <Eye />,
+    href: "#",
+  },
+  {
+    label: "Settings",
+    icon: <Settings />,
+    href: "#",
+  },
+  {
+    label: "Save",
+    icon: <Save />,
+    href: "#",
+  },
+  {
+    label: "Export",
+    icon: <Download />,
+    href: "#",
   },
 ];
 
@@ -39,17 +64,17 @@ const data = {
   },
 };
 
-export function AppSidebar() {
+export function TemplateCreateSidebar() {
   return (
     <Sidebar variant="floating">
       <SidebarHeader className="flex gap-2">
-        <MailIcon />
-        <span>Email Builder</span>
+        <Palette />
+        <span>Template Builder</span>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroupContent>
           <SidebarMenu>
-            {sidebarItems.map((item) => (
+            {templateCreateItems.map((item) => (
               <SidebarMenuItem key={item.label}>
                 <SidebarMenuButton asChild>
                   <Link href={item.href}>
@@ -64,7 +89,7 @@ export function AppSidebar() {
         <SidebarGroup />
       </SidebarContent>
       <SidebarFooter>
-      <NavUser user={data.user} />
+        <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
   );
