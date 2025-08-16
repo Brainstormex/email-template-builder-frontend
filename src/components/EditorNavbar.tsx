@@ -11,10 +11,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { IconDeviceDesktop, IconDeviceMobile } from "@tabler/icons-react";
+import { IconCode, IconDeviceDesktop, IconDeviceMobile } from "@tabler/icons-react";
 
-export function Navbar() {
-  // History buttons group (Undo, History, Redo)
+
+export function EditorNavbar() {
   const buttons: PillButtonItem[] = [
     {
       icon: Undo2,
@@ -53,15 +53,19 @@ export function Navbar() {
               </TooltipProvider>
             ))}
           </div>
-          {/* <div className="flex items-center gap-1 bg-accent rounded-md">
+          <div className="flex items-center gap-1 bg-accent rounded-md">
             <Button variant="ghost" size="icon" className="cursor-pointer hover:bg-accent/80 p-1 rounded-md">
               <IconDeviceDesktop className="h-5 w-5" />
             </Button>
             <Button variant="ghost" size="icon" className="cursor-pointer hover:bg-accent/80 p-1 rounded-md">
               <IconDeviceMobile className="h-5 w-5" />
             </Button>
-          </div> */}
-          This is the main navbar
+          </div>
+          <div>
+            <Button variant="ghost" size="icon">
+                <IconCode className="h-5 w-5" />
+            </Button>
+          </div>
           
           {/* Save button shifted to the right */}
           <div className="flex items-center">
