@@ -22,8 +22,8 @@ import {
   horizontalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { EditorSidebar } from './EditorSidebar';
-import { SettingsSidebar } from './SettingsSidebar';
 import { SortableSidebar } from './SortableSidebar';
+import SettingsSidebar from './SettingsSidebar';
 
 type SidebarId = 'editor' | 'settings';
 
@@ -107,7 +107,7 @@ export function DraggableSidebarContainer({ children }: DraggableSidebarContaine
       onDragEnd={handleDragEnd}
     >
       {/* Toggle between Ghost and Real-time modes */}
-      <div className="absolute top-4 right-4 z-50 bg-white border border-gray-300 rounded-lg p-2 shadow-lg">
+      {/* <div className="absolute top-4 right-4 z-50 bg-white border border-gray-300 rounded-lg p-2 shadow-lg">
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium">Drag Mode:</span>
           <button
@@ -131,7 +131,7 @@ export function DraggableSidebarContainer({ children }: DraggableSidebarContaine
             Real-time
           </button>
         </div>
-      </div>
+      </div> */}
 
       <SortableContext 
         items={isGhostMode ? [] : sidebarOrder} 
